@@ -40,7 +40,8 @@ export default defineConfig({
       dirs: ["src/components"],
       // UI库解析器
       // resolvers: [ArcoResolver()],
-      extensions: ["vue"], //文件扩展
+      // 文件扩展
+      extensions: ["vue"],
     }),
   ],
   css: {

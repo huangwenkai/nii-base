@@ -6,7 +6,7 @@ export const useCounterStore = defineStore("counter", () => {
   const doubleCount = computed(() => counter.value * 2);
   // 方法函数
   function init() {
-    counter.value++;
+    counter.value = 0;
   }
 
   return { counter, doubleCount, init };

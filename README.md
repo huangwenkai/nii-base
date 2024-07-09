@@ -23,6 +23,12 @@ src
 
 ## 项目初始化
 
+节省磁盘空间，所以我们使用pnpm安装依赖
+
+```sh
+npm install -g pnpm
+```
+
 ```sh
 pnpm install
 ```
