@@ -16,15 +16,15 @@ export default defineConfig({
     strictPort: false,
     open: true,
     // 在此处编写代理规则
-    proxy: {
-      "/api": {
-        target: "http://www.baidu.com",
-        changeOrigin: true,
-        rewrite: path => {
-          return path.replace(/\/api/, "");
-        },
-      },
-    },
+    // proxy: {
+    //   "/api": {
+    //     target: "http://www.xxx.com",
+    //     changeOrigin: true,
+    //     rewrite: path => {
+    //       return path.replace(/\/api/, "");
+    //     },
+    //   },
+    // },
   },
   build: {
     outDir: "dist", // 设置输出文件夹的名称为 "dist"
