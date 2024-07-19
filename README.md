@@ -25,7 +25,7 @@
 
 ## 项目结构
 
-src
+src  
 ├── api                               # 接口  
 ├── assets                            # 静态资源  
 ├── components                        # 组件  
