@@ -8,4 +8,12 @@ export default {
       data,
     });
   },
+  // 获取用户日志
+  postUserLog(data) {
+    return http({
+      url: "/user/log",
+      method: "post",
+      data,
+    });
+  },
 };

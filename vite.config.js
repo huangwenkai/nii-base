@@ -4,7 +4,8 @@ import vue from "@vitejs/plugin-vue";
 
 // 组件自动导入
 import Components from "unplugin-vue-components/vite";
-// import { ArcoResolver } from "unplugin-vue-components/resolvers";
+// UI库自动导入（如果需要其他，请自行安装）
+import { ArcoResolver } from "unplugin-vue-components/resolvers";
 // API自动导入
 import AutoImport from "unplugin-auto-import/vite";
 
@@ -19,15 +20,15 @@ export default defineConfig({
     strictPort: false,
     open: true,
     // 在此处编写代理规则
-    // proxy: {
-    //   "/api": {
-    //     target: "http://www.xxx.com",
-    //     changeOrigin: true,
-    //     rewrite: path => {
-    //       return path.replace(/\/api/, "");
-    //     },
-    //   },
-    // },
+    proxy: {
+      "/api": {
+        target: "http://127.0.0.1:3000",
+        changeOrigin: true,
+        rewrite: path => {
+          return path.replace(/\/api/, "");
+        },
+      },
+    },
   },
   build: {
     outDir: "dist", // 设置输出文件夹的名称为 "dist"
@@ -36,13 +37,17 @@ export default defineConfig({
     vue(),
     AutoImport({
       imports: ["vue", "vue-router", "pinia"],
-      dirs: ["src/api", "src/utils/**", "src/stores/**"],
+      dirs: ["src/api", "src/hooks", "src/utils/**", "src/stores/**"],
     }),
     Components({
       // 指定组件所在文件夹的位置
       dirs: ["src/components"],
       // UI库解析器
-      // resolvers: [ArcoResolver()],
+      resolvers: [
+        ArcoResolver({
+          sideEffect: true,
+        }),
+      ],
       // 文件扩展
       extensions: ["vue"],
     }),
@@ -54,7 +59,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // 公共scss
+        // 公共scss参数
         additionalData: `@import "src/assets/styles/global.scss";`,
       },
     },

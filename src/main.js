@@ -12,8 +12,8 @@ import bignumber from "bignumber.js";
 const app = createApp(App);
 
 // 全局变量
-app.config.globalProperties.$dayjs = dayjs; // 时间处理库
-app.config.globalProperties.$bignumber = bignumber; // 数字处理库
+app.config.globalProperties.$day = dayjs; // 时间处理库
+app.config.globalProperties.$big = bignumber; // 数字处理库
 
 app.use(createPinia());
 app.use(router);
