@@ -2,6 +2,7 @@ import "./assets/styles/main.scss";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 import App from "./App.vue";
 import router from "./router";
@@ -15,7 +16,11 @@ const app = createApp(App);
 app.config.globalProperties.$day = dayjs; // 时间处理库
 app.config.globalProperties.$big = bignumber; // 数字处理库
 
-app.use(createPinia());
+// 状态管理（持久化）
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+
+app.use(pinia);
 app.use(router);
 
 app.mount("#app");
