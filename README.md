@@ -27,14 +27,14 @@
 ## 项目结构
 
 src  
-|├──── api # 接口  
-|├──── assets # 静态资源  
-|├──── components # 组件  
-|├──── hooks # 钩子函数  
-|├──── router # 路由  
-|├──── stores # 状态管理  
-|├──── utils # 工具函数  
-|└──── views # 页面  
+│├──── api # 接口  
+│├──── assets # 静态资源  
+│├──── components # 组件  
+│├──── hooks # 钩子函数  
+│├──── router # 路由  
+│├──── stores # 状态管理  
+│├──── utils # 工具函数  
+│└──── views # 页面  
 ├── App.vue  
 └── main.js
 
