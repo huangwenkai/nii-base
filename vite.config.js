@@ -13,7 +13,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-  base: "/",
+  base: "./",
   server: {
     host: "0.0.0.0",
     port: "8181",
@@ -31,7 +31,14 @@ export default defineConfig({
     },
   },
   build: {
+    minify: "terser",
     outDir: "dist", // 设置输出文件夹的名称为 "dist"
+    terserOptions: {
+      compress: {
+        drop_console: true, // 删除console
+        drop_debugger: true, // 删除debugger
+      },
+    },
   },
   plugins: [
     vue(),
