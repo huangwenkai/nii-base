@@ -4,13 +4,11 @@ const http = axios.create({
   // 请求地址前拼接
   baseURL: import.meta.env.VITE_API_BASE_URL,
   // 请求头
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
-  },
+  headers: {},
   // 超时
   timeout: 30000,
 });
-// 响应码拦截
+// 响应码拦截规则
 function successHandle(response) {
   switch (response.status) {
     case 200:

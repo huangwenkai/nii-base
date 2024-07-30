@@ -9,11 +9,11 @@ export default {
     });
   },
   // 获取用户日志
-  postUserLog(data) {
+  postUserLog(params) {
     return http({
       url: "/user/log",
-      method: "post",
-      data,
+      method: "get",
+      params,
     });
   },
 };

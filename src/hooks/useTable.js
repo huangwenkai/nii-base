@@ -4,7 +4,7 @@
  * @param {*} param 请求参数
  * @returns
  */
-const useTableData = (api, param) => {
+const useTable = (api, param) => {
   const tableData = ref([]);
   const tableLoading = ref(false);
 
@@ -23,4 +23,4 @@ const useTableData = (api, param) => {
   return { tableData, tableLoading, getTableData };
 };
 
-export default useTableData;
+export default useTable;
